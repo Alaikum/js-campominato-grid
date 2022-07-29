@@ -17,10 +17,16 @@ buttonElement.addEventListener('click', function () {
     //  richiamo il tabellone 
     const tabelloneElement = document.querySelector('.tabellone')
 
-    if (dimensioneGriglia == 9) {
+    if (dimensioneGriglia == 10) {
+        tabelloneElement.classList.remove('tabellone__medio')
+        tabelloneElement.classList.remove('tabellone__difficile')
+        tabelloneElement.classList.add('tabellone__facile')
+    }else if (dimensioneGriglia == 9) {
         tabelloneElement.classList.remove('tabellone__facile')
+        tabelloneElement.classList.remove('tabellone__difficile')
         tabelloneElement.classList.add('tabellone__medio')
     }else if(dimensioneGriglia==7){
+        tabelloneElement.classList.remove('tabellone__medio')
         tabelloneElement.classList.remove('tabellone__facile')
         tabelloneElement.classList.add('tabellone__difficile')
     }
