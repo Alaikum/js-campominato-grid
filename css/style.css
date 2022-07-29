@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+ul{
+    list-style: none;
+}
+
 img{
     max-width: 100%;
 }
@@ -16,26 +20,69 @@ body{
     justify-content: space-between;
    
 }
-main{
-   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: aquamarine;
-}
-.title__logo{
+
+.nav{
     display: flex;
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 0 0 1rem;
 }
 
+.ul__header{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding-right: 1rem;
+    gap: 1rem;
+  
+}
 
+.ul__header *{
+    font-size: 1.5rem;
+}
 
-.tabellone{
+.ul__header>li>select{
+    width: 12rem;
+    
+}
+
+.ul__header>li>button{
+width: 7rem;
+border-radius: 10px;
+}
+
+main{
+
+display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+}
+
+.tabellone__facile{
     flex-basis: 100%;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
+    max-width: 800px;
+    aspect-ratio: 1/1;
+    background-color: rgba(14, 13, 13, 0.1);
+    margin: 0 auto;
+}
+
+.tabellone__medio{
+    flex-basis: 100%;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    max-width: 800px;
+    aspect-ratio: 1/1;
+    background-color: rgba(14, 13, 13, 0.1);
+    margin: 0 auto;
+}
+
+.tabellone__difficile{
+    flex-basis: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
     max-width: 800px;
     aspect-ratio: 1/1;
     background-color: rgba(14, 13, 13, 0.1);

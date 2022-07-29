@@ -9,13 +9,23 @@
     <title>Griglia Campo Minato</title>
 </head>
 
-<body>
+<body id="">
 
     <header>
-        <div class="title__logo">
+        <div class="nav">
 
             <img src="./img/Logo.png" alt="Logo">
             <h1>Campo minato</h1>
+            <ul class="ul__header">
+    
+                <li>Difficoltà:</li>
+                <li><select id="dimensione">
+                    <option value="10">Easy</option>
+                    <option value="9">Medium</option>
+                    <option value="7">Hard</option>
+                </select></li>
+                <li><button id="button">Play</button></li>
+            </ul>
         </div>
     </header>
 
@@ -23,7 +33,7 @@
 
     <main>
 
-        <div class="tabellone">
+        <div class=" tabellone tabellone__facile">
 
         </div>
 

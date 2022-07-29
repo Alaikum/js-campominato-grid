@@ -2,59 +2,80 @@ console.log('Abbinato')
 
 
 // dimensione della griglia 
-let dimensioneGriglia = 10;
+
+const buttonElement = document.getElementById('button')
+
+buttonElement.addEventListener('click', function () {
 
 
 
-//  richiamo il tabellone 
-const tabelloneElement = document.querySelector('.tabellone')
-
-// console.log(tabelloneElement, dimensioneGriglia)
-
-generaGriglia(dimensioneGriglia, tabelloneElement)
-
-// creo funzione per generare la griglia 
-function generaGriglia(dimensione, tabellone) {
-
-    // numero di celle da fare 
-    const celleDellaGriglia = dimensione ** 2
-
-    // elementi div creati 
-    const div = document.createElement('div')
-
-    for (let i = 0; i < celleDellaGriglia; i++) {
-        // console.log(i)
-        // creo elemento square  con la Funzione
-        const cella = getSquareElement()
-        cella.innerHTML=[i+1]
-        // appendo a tabellone 
-        tabellone.append(cella)
+    let dimensioneGriglia = document.getElementById('dimensione');
+    dimensioneGriglia = dimensioneGriglia.value
 
 
+    // console.log(buttonElement)
+    //  richiamo il tabellone 
+    const tabelloneElement = document.querySelector('.tabellone')
+
+    if (dimensioneGriglia == 9) {
+        tabelloneElement.classList.remove('tabellone__facile')
+        tabelloneElement.classList.add('tabellone__medio')
+    }else if(dimensioneGriglia==7){
+        tabelloneElement.classList.remove('tabellone__facile')
+        tabelloneElement.classList.add('tabellone__difficile')
     }
-    return div.innerHTML
-}
+
+    console.log(dimensioneGriglia)
+    // reset dello schermo 
+    tabelloneElement.innerHTML = ''
+    generaGriglia(dimensioneGriglia, tabelloneElement)
+
+    // creo funzione per generare la griglia 
+    function generaGriglia(dimensione, tabellone) {
 
 
-// funzione che crea lo square e gli da le proprietà
-function getSquareElement() {
-    const square = document.createElement('div')
-    square.classList.add('square')
+        // numero di celle da fare 
+        const celleDellaGriglia = dimensione ** 2
 
-    // inserisco funzione click 
-    square.addEventListener('click', clickHandler)
+        // elementi div creati 
+        const div = document.createElement('div')
 
-    return square
-}
 
-function clickHandler() {
+        for (let i = 0; i < celleDellaGriglia; i++) {
+            // console.log(i)
+            // creo elemento square  con la Funzione
+            const cella = getSquareElement()
+            cella.innerHTML = [i + 1]
+            // appendo a tabellone 
+            tabellone.append(cella)
 
-    // uso il this per localizzare lo square 
-    const square = this
-    square.classList.toggle('clicked')
-    console.log('Hai cliccato la cella n'+square.innerHTML)
-    
 
-    // essendo campo minato puoi cliccare solo una volta 
-    square.removeEventListener('click', clickHandler)
-}
+        }
+        return div.innerHTML
+    }
+
+
+    // funzione che crea lo square e gli da le proprietà
+    function getSquareElement() {
+        const square = document.createElement('div')
+        square.classList.add('square')
+
+        // inserisco funzione click 
+        square.addEventListener('click', clickHandler)
+
+        return square
+    }
+
+    function clickHandler() {
+
+        // uso il this per localizzare lo square 
+        const square = this
+        square.classList.toggle('clicked')
+        console.log('Hai cliccato la cella n' + square.innerHTML)
+
+
+        // essendo campo minato puoi cliccare solo una volta 
+        square.removeEventListener('click', clickHandler)
+    }
+
+})
