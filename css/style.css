@@ -44,16 +44,19 @@ main{
 
 .square{
     aspect-ratio: 1/1;
-    border: 2px solid white;
+    border: 2px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 2rem;
+    cursor: pointer;
+   
 }
 
 .square.clicked{
-    background-color: azure;
+    background-color: cornflowerblue;
+    cursor: no-drop;
 }
 
 
