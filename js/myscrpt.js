@@ -9,7 +9,7 @@ let dimensioneGriglia = 10;
 //  richiamo il tabellone 
 const tabelloneElement = document.querySelector('.tabellone')
 
-console.log(tabelloneElement, dimensioneGriglia)
+// console.log(tabelloneElement, dimensioneGriglia)
 
 generaGriglia(dimensioneGriglia, tabelloneElement)
 
@@ -52,6 +52,8 @@ function clickHandler() {
     // uso il this per localizzare lo square 
     const square = this
     square.classList.toggle('clicked')
+    console.log('Hai cliccato la cella n'+square.innerHTML)
+    
 
     // essendo campo minato puoi cliccare solo una volta 
     square.removeEventListener('click', clickHandler)
